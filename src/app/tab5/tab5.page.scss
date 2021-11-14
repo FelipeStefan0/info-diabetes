@@ -1,0 +1,247 @@
+@font-face {
+    font-family: Abingdon;
+    src: url('../../assets/fonts/Abingdon\ Bold.otf');
+  }
+  
+  @font-face {
+    font-family: arson;
+    src: url('../../assets/fonts/Arson\ Pro\ Black.otf');
+  }
+  
+  ion-content{
+    --background: #02a0ba;
+    
+  }
+  
+  .flex-center{
+    width: 100%;
+
+    margin-top: 60px;
+    margin-bottom: 70px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .caixa{
+    --background: #1bbdd7;
+  
+    --color:white;
+  
+    padding: 4px;
+    width: 85.5vw;
+  
+    border-radius:20px;
+  
+    box-shadow: 
+    inset 5px 5px 5px rgba(0,0,0,0.2),
+    inset -10px -10px 15px rgba(255,255,255,0.1),
+    5px 5px 15px rgba(0,0,0,0.3),
+    -5px -5px 15px rgba(255,255,255,0.1);
+  }
+  
+  .caixa1{
+    font-family: 'arson';
+    --color:#F8F8F8;
+  }
+  
+  .caixa2{
+    font-family: 'arson';
+  }
+  .caixa2 ion-item {
+    --border-radius: 10px;
+  }
+  .caixa3{
+    font-family: 'arson';
+    --color:#F8F8F8;
+    font-size: 16px;
+    margin-left:5px;
+  }
+  .result{
+    color: #02a0ba;
+  
+    padding: 10px;
+  
+    border-radius: 20px;
+  
+    p {
+      text-align: center;
+  
+      margin-bottom: 10px;
+    }
+  }
+  .input {
+    --placeholder-color: #02a0ba;
+  }
+  
+  .title{
+    font-family: Abingdon;
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .db{
+    --background: #1bbdd7;
+  
+    font-size:15px;
+    --color: white;
+  
+  }
+  .db2{
+    .db{
+      --color: #1bbdd7;
+    }
+    --color: #1bbdd7;
+    --background: white;
+  
+    font-size:15px;
+    position:flex;
+    --color-checked: #1bbdd7;
+    bottom:0;
+  
+    label {
+      margin-left: 5px;
+    }
+  }
+  
+  .button{
+    --background:#d0284f;
+  
+    --color:white;
+  
+    padding-top: 5px;
+  }
+  
+  .calculadora{
+    width: 89%;
+    background:white;
+  
+    margin:auto;
+    padding: 6px;
+  
+    border: 1px solid white;
+    border-radius: 20px;  
+  }
+  
+  .calculadora1{
+    width: 89%;
+  
+    margin:auto;
+    padding: 6px;
+  
+    border: 1px solid white;
+    border-radius: 20px;  
+  }
+  
+  tr{
+    padding: 5px;
+  }
+  .direi{
+    text-align: right;
+  }
+  ion-input{
+    padding: 3px;
+  
+    border: 1px solid white;
+    border-radius: 3px;
+  }
+  
+  .form{
+    position: relative;
+  }
+  
+  #calcular{
+    background-color: white;
+  
+    font-family: arson;
+    font-size: 20px;
+    text-align: center;
+    color: #02a0ba;
+  
+    width: 150px;
+  
+    margin: auto;
+    margin-top: 30px;
+  
+    border-radius: 20px;
+  }
+  
+  .categoria{
+    color: white;
+  
+    margin: 10px;
+  
+    position: relative;
+  
+    div {
+      padding: 5px;
+    }
+  }
+  
+  .destaque{
+    background-color: #d0284f;
+    border-radius: 3px;
+  }
+  
+  #resultado{
+    text-align: center;
+  }
+  
+  .box{
+    display: flex;
+    justify-content: space-between;
+    ion-item{
+      width: 60px;
+    }
+  }
+  
+  #msgError {
+    font-family: arson;
+    font-size: 17px;
+    color: #ce1717;
+  }
+  
+  .icons {
+  
+    div {
+      
+      margin-bottom: 10px;
+  
+      display: flex;
+      align-items: center;
+      
+      ion-icon {
+        background-color: #d0284f;
+  
+        width: 30px;
+        height: 30px;
+  
+        padding: 10px;
+  
+        border-radius: 50%;
+  
+      }
+  
+      p {
+        font-family: arson;
+        font-size: 15px;
+        text-align: justify;
+  
+        margin-left: 10px;
+  
+      }
+    }
+  
+  }
+  
+  :Host {
+    .ionCardHeader {
+      padding: 0;
+  
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  
+  

@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Chocolate Cookies';
+  src: url('../../../assets/fonts/Chocolate\ Cookies.ttf');
+}
+
+ion-content {
+  --background: #02a0ba;
+}
+
+ion-content .loader-title {
+  font-family: 'Chocolate Cookies';
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+
+  margin-top: 50px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center img {
+  width: 330px;
+  height: 300px;
+
+  margin-top: 10%;
+}
+
+.flex-center ion-button {
+  color: white;
+
+  width: 95%;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  --border-color: white; 
+
+  position: absolute;
+  bottom: 10px;
+}
+
+.flex-center ion-button:active {
+  --background: #c32c52;
+  
+  --border-color: #aa2849;
+}

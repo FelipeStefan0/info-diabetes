@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'Abingdon';
+  src: url('../../../../assets/fonts/Abingdon\ Bold.otf');
+}
+
+@font-face {
+  font-family: 'arson';
+  src: url('../../../../assets/fonts/Arson\ Pro\ Black.otf');
+}
+
+ion-content {
+  --background: #02a0ba;
+}
+
+ion-card {
+  width: 310px;
+
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+}
+
+.lastCard {
+  margin-bottom: 50px;
+}
+
+ion-card ion-card-title {
+  font-family: 'Abingdon';
+  font-size: 27px;
+  color: #02a0ba;
+  text-align: center;
+  
+  padding: 16px;
+}
+
+ion-card ion-card-subtitle {
+  font-family: 'Abingdon';
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}
+
+ion-card ion-card-content {
+  font-family: 'arson';
+  text-align: justify;
+
+  margin: 10px;
+}
+
+span {
+  color: black;
+  text-decoration: underline;
+}
+
+.linkImg {
+  font-size: 10px;
+  font-family: 'arson';
+  color: rgb(184, 184, 184);
+  text-decoration: none;
+
+  margin-right: 20px;
+
+  float: right;
+}
+
+.linkImg a {
+  color: rgb(184, 184, 184);
+}
+
+.details {
+  background-color: #d6315a;
+
+  margin: 10px;
+
+  border-radius: 10px;
+}
+
+details {
+  font-family: 'arson';
+  color: white;
+
+  margin-bottom: 10px;
+}
+
+summary {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.details-content {
+  background-color: #02a0ba;
+}
+
+.imgResp.img1 {
+  margin-top: -50px;
+  margin-bottom: 30px;
+}
+
+.imgResp.img2 {
+  margin-top: -50px;
+}
+
+.fonte {
+  font-family: 'arson';
+  color: black;
+}
+
+#fonte {
+  font-size: 10px;
+  color: black;
+  text-decoration: none;
+}

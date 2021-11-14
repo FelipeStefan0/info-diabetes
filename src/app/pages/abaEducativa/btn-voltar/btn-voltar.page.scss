@@ -1,0 +1,19 @@
+ion-tab-bar {
+  display: none;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+ion-button {
+  --background: #d6315a;
+
+  width: 200px;
+
+  margin: 10px;
+
+  position: absolute;
+  bottom: 0;
+}

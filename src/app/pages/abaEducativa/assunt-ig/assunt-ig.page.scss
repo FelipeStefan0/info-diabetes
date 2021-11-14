@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Abingdon';
+  src: url('../../../../assets/fonts/Abingdon\ Bold.otf');
+}
+
+@font-face {
+  font-family: 'arson';
+  src: url('../../../../assets/fonts/Arson\ Pro\ Black.otf');
+}
+
+ion-content {
+  --background: #02a0ba;
+}
+
+ion-card {
+  width: 310px;
+
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+}
+
+.lastCard {
+  margin-bottom: 50px;
+}
+
+ion-card ion-card-title {
+  font-family: 'Abingdon';
+  font-size: 27px;
+  text-align: center;
+}
+
+#mainTitle {
+  color: #02a0ba;
+}
+
+ion-card ion-card-content {
+  font-family: 'arson';
+  text-align: justify;
+
+  margin: 10px;
+}
+
+span{
+  font-size: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.linkImg {
+  font-size: 10px;
+  color: rgb(121, 121, 121);
+  text-decoration: none;
+  
+  float: right;
+}
+
+.linkImg a {
+  color: rgb(121, 121, 121);
+}
+
+summary {
+  font-family: 'arson';
+  color: black;
+}

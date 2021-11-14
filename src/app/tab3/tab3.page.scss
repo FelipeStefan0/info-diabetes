@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Abingdon';
+  src: url('../../assets/fonts/Abingdon\ Bold.otf');
+}
+
+@font-face {
+  font-family: 'arson';
+  src: url('../../assets/fonts/Arson\ Pro\ Black.otf');
+}
+
+ion-header {
+  --ion-background-color: #1bbdd7;
+}
+
+ion-header ion-title{
+  font-family: 'Abingdon';
+  font-size: 40px;
+  color: white;
+  text-align: center; 
+}
+
+.flex-content {
+  --ion-background-color: #02a0ba;
+
+  height: 100%;
+}
+
+img {
+  margin-bottom: 15px;
+}
+
+ion-button {
+  --background: white;
+
+  font-family: 'arson';
+  color: #d6315a;
+
+  width: 74%;
+  height: 40px;
+
+  margin-left: 13%;
+  margin-bottom: 20px;
+
+  --border-radius: 10px;
+}
+
+#final-button {
+  margin-bottom: 75px;
+}

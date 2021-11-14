@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Questões</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card class="cardTitle">
+    <ion-card-title>Questões sobre a aba educativa</ion-card-title>
+  </ion-card>
+
+  <ion-card class="cardQuestions">
+    <img src="../../../../assets/img/abaEducativa/perguntas/PERGUNTAS.png" alt="NotFound.png">
+    <p id="contador" *ngIf="contador > 0 && contador <= 5">{{contador}}/5</p>
+    <h1 id="msgInicial" *ngIf="exec == 0">Agora vamos testar seus conhecimentos! Aperte o botão para começar.</h1>
+
+    <div class="enunciados" id="enunciados" style="display: none;" *ngIf="contador <= 5">
+      <p id="enunciadoText"></p>
+      <ion-radio-group id="radioText" [(ngModel)]="radioValue">
+      </ion-radio-group>
+    </div>
+
+    <div id="resultado" class="resultado" *ngIf="contador > 5">
+      <div>
+        <h1>Pontuação: {{pontos}} questões corretas!</h1>
+      </div>
+      <h2>Respostas certas</h2>
+      <p id="respCertas"></p><br>
+
+      <h2>Respostas erradas</h2>
+      <p id="respErradas"></p><br>
+    </div>
+
+    <div class="buttons">
+      <ion-button id="btnComecar" (click)="comecar()" *ngIf="exec == 0">Começar</ion-button>
+      <ion-button id="btnComecar" (click)="proximo()" *ngIf="0 < exec && exec <= 5">Próximo</ion-button>
+      <ion-button id="btnComecar" (click)="sair()" *ngIf="contador > 5">Terminar</ion-button>
+    </div>
+    <div class="temp" *ngIf="show == 1">
+      <p id="temporizador">2...</p>
+    </div>
+  </ion-card>
+</ion-content>

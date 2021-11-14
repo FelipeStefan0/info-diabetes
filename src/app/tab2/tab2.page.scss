@@ -1,0 +1,38 @@
+ion-content {
+  --background: #02a0ba;
+}
+
+.ion-card {
+  width: 90%;
+  height: 65vh;
+  margin: auto;
+
+  border-radius: 10px;
+}
+
+ion-card-title {
+  color: #455a64;
+  font-size:25px;
+  font-family: Abingdon;
+}
+
+ion-card-content {
+  font-family: arson;
+  font-size: 1em;
+  color: #1bbdd7;
+  text-align: justify;
+}
+
+.welcome {
+  font-family: arson;
+  --color: #1bbdd7;
+
+  margin-top: 70px;
+}
+
+:Host {
+  ion-card-header.welcomeHeader{
+    padding: 0px;
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,53 @@
+<ion-content fullscreen="true">
+  <ion-card class="welcome">
+    <ion-card-header class="welcomeHeader">
+      <p>Bem vindo, {{nome}}!</p>
+    </ion-card-header>
+  </ion-card>
+  <ion-slides [options]="option" style="height: 70%;">
+    <ion-slide>
+      <ion-card class="ion-card" [routerLink]="['/tab1/tab3']">
+        <ion-card-header>
+          <img src="../../assets/img/tab2/abaedu.png" alt="NotFound.png">
+          <ion-card-title>Aba educativa</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Nessa aba encontram-se algumas informações a respeito de diabetes e da alimentação.
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-card" [routerLink]="['/tab1/tab4']">
+        <ion-card-header>
+          <img src="../../assets/img/tab2/tabalim.png" alt="NotFound.png">
+          <ion-card-title>Tabela de alimentos</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Na tabela é possível observar o índice glicêmico e a quantidade de carboidratos de alguns alimentos.
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-card" [routerLink]="['/tab1/tab5']">
+        <ion-card-header>
+          <img src="../../assets/img/tab2/calc.png" alt="NotFound.png">
+          <ion-card-title>Calculadora de riscos</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Quer saber os riscos de ter diabetes? A calculadora poderá dar uma estimativa aproximada do seu risco.
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="ion-card" [routerLink]="['/tab1/tab7']">
+        <ion-card-header>
+          <img src="../../assets/img/tab2/testconh.png" alt="NotFound.png">
+          <ion-card-title>Testando seus conhecimentos!</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Essa é a parte mais interativa do nosso App! Teste seus conhecimentos aprendidos na aba educativa!
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

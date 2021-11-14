@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'Abingdon';
+  src: url('../../../../assets/fonts/Abingdon\ Bold.otf');
+}
+
+@font-face {
+  font-family: 'arson';
+  src: url('../../../../assets/fonts/Arson\ Pro\ Black.otf');
+}
+
+ion-content {
+  --background: #02a0ba;
+}
+
+ion-card.cardTitle {
+  --background: white;
+
+  ion-card-title {
+    font-family: 'Abingdon';
+    font-size: 27px;
+    color: #02a0ba;
+    text-align: center;
+  
+    margin: 10px;
+  }
+
+}
+
+ion-card.cardQuestions {
+  --background: white;
+
+  img {
+    margin-bottom: -50px;
+  }
+
+  p#contador {
+    background-color: #02a0ba;
+
+    font-family: 'arson';
+    color: white;
+
+    margin-right: 5px;
+    padding: 7px;
+
+    border-radius: 5px;
+
+    position: absolute;
+    right: 0;
+    margin-top: -4px;
+  }
+
+  h1#msgInicial {
+    font-family: 'arson';
+    font-size: 25px;
+    text-align: justify;
+    color: #d6315a;
+
+    margin: 30px;
+  }
+
+  h2 {
+    font-family: 'arson';
+    font-size: 20px;
+    text-align: justify;
+    color: #d6315a;
+
+    margin: 30px;
+  }
+
+  div.enunciados {
+    background-color: #d6315a;
+    
+    margin: 10px;
+    padding: 10px;
+    
+    border-radius: 10px;
+
+    p {
+      font-family: 'arson';
+      color: white;
+      text-align: justify;
+    }
+  }
+
+  ion-radio-group {
+    --background: #d6315a;
+
+    ion-radio {
+      --background: #d6315a;
+    }
+  }
+
+  div.resultado {
+
+    h1 {
+      font-family: 'arson';
+      font-size: 25px;
+      color: #d6315a;
+
+      margin: 30px;
+    }
+
+    p {
+      font-family: 'arson';
+      font-size: 15px;
+      color: #02a0ba;
+      text-align: justify;
+
+      margin: 10px;
+    }
+  }
+
+  div.buttons {
+    display: flex;
+    justify-content: center;
+
+    ion-button {
+      font-family: 'arson';
+      font-size: 18px;
+  
+      width: 200px;
+  
+      margin-bottom: 10px;
+    }
+
+  }
+
+}
+
+div.btnVoltar {
+
+  display: flex;
+  justify-content: center;
+
+  ion-button#btnVoltar {
+    --background: #d6315a; 
+  
+    font-family: 'arson';
+    font-size: 18px;
+    
+    width: 200px;
+    
+    margin-bottom: 10px;    
+
+    position: absolute;
+    bottom: 0;
+  }
+
+}

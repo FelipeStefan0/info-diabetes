@@ -1,0 +1,17 @@
+{
+	"appId": "br.com.infoDiabetesApp",
+	"appName": "Info Diabetes",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"cordova": {
+		"preferences": {
+			"ScrollEnabled": "false",
+			"BackupWebStorage": "none",
+			"SplashMaintainAspectRatio": "true",
+			"FadeSplashScreenDuration": "300",
+			"SplashShowOnlyFirstTime": "false",
+			"SplashScreen": "none",
+			"SplashScreenDelay": "3000"
+		}
+	}
+}

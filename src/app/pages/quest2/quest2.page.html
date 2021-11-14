@@ -1,0 +1,318 @@
+<ion-content class="ion-content" *ngIf="sumir<=0">
+  <div class="flex-center">
+    <ion-card class="caixa">
+      <p class="title">Não tem diabetes, mas quer saber o risco de ter?</p>
+      <ion-card-header>
+        <ion-button class="button" (click)="quest2()">Pular ➜</ion-button>
+      </ion-card-header>
+      <!--PERGUNTA 1-->
+      <ion-card-header>
+        <ion-card-title class="caixa1">Qual sua idade?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="caixa2">
+        <ion-item class="cardzin">
+          <ion-input [(ngModel)]="idade" type="number" placeholder="digite aqui"></ion-input>
+        </ion-item>
+      </ion-card-content>
+      <!--PERGUNTA 2-->
+      <ion-card-header>
+        <ion-card-title class="caixa1">Qual seu IMC? (Índice de Massa Corporal)</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="caixa2">
+        <ion-item *ngIf="aparecerImc<1">
+          <ion-input [(ngModel)]="imc" type="number" placeholder="digite aqui (em Kg/m²)"></ion-input>
+        </ion-item>
+        <ion-radio-group>
+          <ion-item class="db">
+            <ion-label>Não sei</ion-label>
+            <ion-radio class="db" (click)="rodar()" id="radioImc"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <ion-button class="button" *ngIf="aparecerImc>=1" (click)="rodar()">Quer descobrir seu IMC?</ion-button>
+      </ion-card-content>
+      <ion-card-header class="ionCardHeader">
+        <ion-card-title class="caixa1" *ngIf="aparecerImc>1">IMC:</ion-card-title>
+      </ion-card-header>
+      <div class="calculadora1" *ngIf="aparecerImc>1">
+        <div class="form">
+          <ion-card-header>
+            <ion-card-title class="caixa1">Qual sua altura?</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="caixa2">
+            <ion-item>
+              <ion-input [(ngModel)]="altura" type="number" placeholder="digite aqui (em metros)"></ion-input>
+            </ion-item>
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-title class="caixa1">Qual seu peso?</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="caixa2">
+            <ion-item>
+              <ion-input [(ngModel)]="peso" type="number" placeholder="digite aqui (em kg)"></ion-input>
+            </ion-item>
+          </ion-card-content>
+          <ion-input id="calcular" type="submit" value="Calcular" (click)="calcular()"></ion-input>
+        </div>
+        <p id="resultado" class="title">Resultado da conta: {{imcText}}</p>
+        <ion-grid>
+          <ion-row>
+            <ion-col id="baixoPeso">Baixo peso</ion-col>
+            <ion-col id="baixoPeso2" size="8" class="ion-text-end">(menos de 18.5 Kg/m²)</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="normal">Normal</ion-col>
+            <ion-col id="normal2" size="8" class="ion-text-end">(18.5 a 25 Kg/m²)</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="sobrepeso">Sobrepeso</ion-col>
+            <ion-col id="sobrepeso2" size="8" class="ion-text-end">(25 a 30 Kg/m²)</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="obesidadeI">Obesidade I</ion-col>
+            <ion-col id="obesidadeI2" size="8" class="ion-text-end">(30 a 35 Kg/m²)</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="obesidadeII">obesidade II</ion-col>
+            <ion-col id="obesidadeII2" size="8" class="ion-text-end">(35 a 40 Kg/m²)</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="obesidadeIII">obesidade III</ion-col>
+            <ion-col id="obesidadeIII2" size="8" class="ion-text-end">(40 Kg/m² ou mais)</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!--PERGUNTA 3-->
+      <ion-card-header>
+        <ion-card-title class="caixa1">Qual a circunferência de sua cintura?</ion-card-title>
+      </ion-card-header>
+      <p class="caixa3" style="margin-left: 15px;" *ngIf="aparecer<1">Com qual tipo de corpo você se identifica?</p>
+      <ion-card-content>
+        <ion-radio-group [(ngModel)]="genero">
+          <ion-item class="db">
+            <ion-label>Masculino</ion-label>
+            <ion-radio class="db" value="1" (click)="execut2()" id="radioGenMasc"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Feminino</ion-label>
+            <ion-radio class="db" value="2" (click)="execut2()" id="radioGenFem"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-card-content>
+      <ion-card-content class="caixa2">
+        <ion-item *ngIf="aparecer==1">
+          <ion-input [(ngModel)]="cintura" type="number" placeholder="digite aqui (em cm)"></ion-input>
+        </ion-item>
+        <ion-button class="button" *ngIf="aparecer==1" (click)="execut()">Simule a circunferência</ion-button>
+      </ion-card-content>
+      <ion-card-header class="ionCardHeader">
+        <ion-card-title class="caixa3" *ngIf="aparecer==2">Qual circunferência da cintura é compatível ou aproximada da sua?  (clique em uma opção para visualizar)</ion-card-title>
+      </ion-card-header>
+      <div class="calculadora" *ngIf="aparecer==2">
+        <!--HOMEM-->
+        <ion-card-content class="macho" *ngIf="generoSelect==1">
+          <ion-card class="box" *ngIf="opcao==1">
+            <img src="../../../assets/img/CORPOS/1.png">
+          </ion-card>
+          <ion-card class="box" *ngIf="opcao==2">
+            <img src="../../../assets/img/CORPOS/2.png">
+          </ion-card>
+          <ion-card class="box" *ngIf="opcao==3">
+            <img src="../../../assets/img/CORPOS/3.png">
+          </ion-card>
+          <ion-radio-group [(ngModel)]="cinturaHomem">
+            <ion-item class="db2">
+              <ion-radio class="db" value="1" (click)="apertar1()"></ion-radio>
+              <label>1 - Menor que 94 cm</label>
+            </ion-item>
+            <ion-item class="db2">
+              <ion-radio class="db" value="2" (click)="apertar2()"></ion-radio>
+              <label>2 - Entre 94 a 102 cm</label>
+            </ion-item>
+            <ion-item class="db2">
+              <ion-radio class="db" value="3" (click)="apertar3()"></ion-radio>
+              <label>3 - Maior que 102 cm</label>
+            </ion-item>
+          </ion-radio-group>
+        </ion-card-content>
+        <!--MULHER-->
+        <ion-card-content class="femea" *ngIf="generoSelect==2">
+          <ion-card class="box" *ngIf="opcao==1">
+            <img src="../../../assets/img/CORPOS/4.png">
+          </ion-card>
+          <ion-card class="box" *ngIf="opcao==2">
+            <img src="../../../assets/img/CORPOS/5.png">
+          </ion-card>
+          <ion-card class="box" *ngIf="opcao==3">
+            <img src="../../../assets/img/CORPOS/6.png">
+          </ion-card>
+          <ion-radio-group [(ngModel)]="cinturaMulher">
+            <ion-item class="db2">
+              <ion-radio class="db" value="1" (click)="apertar1()"></ion-radio>
+              <label>1 - Menor que 80 cm</label>
+            </ion-item>
+            <ion-item class="db2">
+              <ion-radio class="db" value="2" (click)="apertar2()"></ion-radio>
+              <label>2 - Entre 80 a 88 cm</label>
+            </ion-item>
+            <ion-item class="db2">
+              <ion-radio class="db" value="3" (click)="apertar3()"></ion-radio>
+              <label>3 - Maior que 88 cm</label>
+            </ion-item>
+          </ion-radio-group>
+        </ion-card-content>
+      </div>
+      <!--PERGUNTA 4-->
+      <ion-card-header>
+        <ion-card-title class="caixa1">Você pratica exercícios físicos?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="caixa2">
+        <ion-radio-group [(ngModel)]="valorExerc">
+          <ion-item class="db">
+            <ion-label>Sempre</ion-label>
+            <ion-radio class="db" value="1"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Quase sempre</ion-label>
+            <ion-radio class="db" value="2"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Às vezes</ion-label>
+            <ion-radio class="db" value="3"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Raramente</ion-label>
+            <ion-radio class="db" value="4"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Nunca</ion-label>
+            <ion-radio class="db" value="5"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-card-content>
+      <!--PERGUNTA 5-->
+      <ion-card-header>
+        <ion-card-title class="caixa1">Tem algum parente familiar com diabetes?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="caixa2">
+        <ion-radio-group [(ngModel)]="valorFamiliar">
+          <ion-item class="db">
+            <ion-label>Sim (pais, irmãos ou filhos)</ion-label>
+            <ion-radio class="db" value="1"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Sim (avós, tios ou primos)</ion-label>
+            <ion-radio class="db" value="2"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Não</ion-label>
+            <ion-radio class="db" value="3"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-card-content>
+      <!--PERGUNTA 6-->
+      <ion-card-header>
+        <ion-card-title class="caixa1">Se alimenta de frutas, verduras ou legumes frequentemente?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="caixa2">
+        <ion-radio-group [(ngModel)]="valorAlimentar">
+          <ion-item class="db">
+            <ion-label>Sempre</ion-label>
+            <ion-radio class="db" value="1"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Quase sempre</ion-label>
+            <ion-radio class="db" value="2"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Às vezes</ion-label>
+            <ion-radio class="db" value="3"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Raramente</ion-label>
+            <ion-radio class="db" value="4"></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Nunca</ion-label>
+            <ion-radio class="db" value="5"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-card-content>
+      <ion-card-header>
+        <p id="msgError" *ngIf="msg>=1">Preencha todos os campos!</p>
+        <ion-button class="button" (click)="calcularRisco()">Continuar ➜</ion-button>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
+<!--RESULTADO-->
+<ion-content class="ion-content" *ngIf="sumir>=1">
+  <div class="flex-center">
+    <ion-card class="caixa">
+      <ion-card-content>
+        <ion-card class="result">
+          <!--HOMENS-->
+          <div class="result" *ngIf="result==1">
+            <p class="caixa3">A ESTIMATIVA É QUE VOCÊ TEM UM ALTO RISCO!</p>
+            <img src="../../../assets/img/quest2/ALTORISCO_HOMEM.png">
+          </div>
+          <div class="result" *ngIf="result==2">
+            <p class="caixa3">A ESTIMATIVA É QUE VOCÊ TEM UM RISCO MÉDIO!</p>
+            <img src="../../../assets/img/quest2/MEIORISCO_HOMEM.png">
+
+          </div>
+          <div class="result" *ngIf="result==3">
+            <p class="caixa3">A ESTIMATIVA É QUE VOCÊ TEM POUCOS RISCOS!</p>
+            <img src="../../../assets/img/quest2/SEMRISCO_HOMEM.png">
+
+          </div>
+          <!--MULHER-->
+          <div class="result" *ngIf="result==4">
+            <p class="caixa3">A ESTIMATIVA É QUE VOCÊ TEM UM ALTO RISCO!</p>
+            <img src="../../../assets/img/quest2/ALTORISCO.png">
+
+          </div>
+          <div class="result" *ngIf="result==5">
+            <p class="caixa3">A ESTIMATIVA É QUE VOCÊ TEM UM RISCO MÉDIO!</p>
+            <img src="../../../assets/img/quest2/MEIORISCO_HOMEM.png">
+
+          </div>
+          <div class="result" *ngIf="result==6">
+            <p class="caixa3">A ESTIMATIVA É QUE VOCÊ TEM POUCOS RISCOS!</p>
+            <img src="../../../assets/img/quest2/SEMRISCO.png">
+
+          </div>
+        </ion-card>
+        <ion-card-content class="icons">
+          <div>
+            <div>
+              <ion-icon name="fast-food-outline"></ion-icon>
+            </div>
+            <p *ngIf="aparecerTopicoA==1">Continue se alimentando de frutas, legumes e verduras! Mas se dê o luxo de
+              comer uma besteira uma vez ou outra!</p>
+            <p *ngIf="aparecerTopicoA==2">Você conhece os benefícios de uma alimentação rica em frutas, verduras e
+              legumes? Que tal conhecer mais e se alimentar melhor?</p>
+          </div>
+          <div>
+            <div>
+              <ion-icon name="bicycle-outline"></ion-icon>
+            </div>
+            <p *ngIf="aparecerTopicoE==3">Procure construir o hábito de realizar atividades físicas, além de auxiliar na
+              sua saúde física, auxilia também na sua saúde mental!</p>
+            <p *ngIf="aparecerTopicoE==4">Continue praticando atividades físicas! Além de melhorar sua saúde física, terá
+              uma melhora na sua saúde mental!</p>
+          </div>
+          <div>
+            <div>
+              <ion-icon name="warning-outline"></ion-icon>
+            </div>
+            <p>Observações: Independente do resultado, não se preocupe! esse teste é apenas uma estimativa de acordo com
+              seus dados físicos!</p>
+          </div>
+        </ion-card-content>
+      </ion-card-content>
+      <ion-card-header>
+        <ion-button class="button" (click)="quest2()">Ir para a tela inicial ➜</ion-button>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>

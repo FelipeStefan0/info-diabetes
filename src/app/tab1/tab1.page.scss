@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Abingdon';
+  src: url('../../assets/fonts/Abingdon\ Bold.otf');
+}
+
+@font-face {
+  font-family: 'arson';
+  src: url('../../assets/fonts/Arson\ Pro\ Black.otf');
+}
+
+ion-header {
+  --ion-background-color: #1bbdd7;
+
+  ion-toolbar {
+
+    div {
+
+      display: flex;
+      justify-content: center;
+      
+      .header {
+    
+        display: flex;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+  
+      }
+
+    }
+
+  }
+
+}
+
+:host {
+
+  ion-title {
+    padding-inline: 0;
+  }
+
+}
+
+ion-header ion-title{
+  font-family: 'Abingdon';
+  font-size: 40px;
+  color: white;
+
+  span {
+
+    color: #d6315a;
+
+    margin-left: 5px;
+
+  }
+
+}
+
+ion-tab-bar {
+  --background: #1bbdd7;
+
+  width: 88%;
+
+  margin: auto;
+  
+  border: 1px solid #21e1ff;
+  border-radius: 10px;
+
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+ion-tab-button {
+  font-size: 9px;
+  font-family: 'arson';
+  --color: whitesmoke;
+  --color-selected: #c32c52;
+}
+
+ion-icon {
+  width: 20px;
+  height: 20px;
+}

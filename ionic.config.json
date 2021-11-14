@@ -1,0 +1,8 @@
+{
+  "name": "diabetesManager",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

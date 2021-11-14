@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="flex-center">
+    <ion-card class="caixa">
+        <ion-card-header>
+        <ion-card-title class="caixa1">Qual seu nome?</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content class="caixa2">
+        <ion-item class="floa">
+          <ion-label color="white" position="floating">Digite aqui</ion-label>
+          <ion-input type="name" name="nome" id="nome" required [(ngModel)]="nome"></ion-input>
+        </ion-item>
+      </ion-card-content>  
+      <ion-card-header>
+        <ion-card-title class="caixa1">Qual seu tipo de diabetes?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="caixa2">
+        <ion-radio-group [(ngModel)]="radioValue">
+          <ion-item class="db">
+            <ion-label>Tipo 1</ion-label>
+            <ion-radio class="db" value=1></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Tipo 2</ion-label>
+            <ion-radio class="db" value=2></ion-radio>
+          </ion-item>
+          <ion-item class="db">
+            <ion-label>Não Tenho</ion-label>
+            <ion-radio class="db" value=3></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <p id="p"></p>
+        <ion-button class="button" (click)="quest()">Continuar ➜</ion-button>        
+      </ion-card-content>          
+    </ion-card>
+  </div>
+  <div>
+      <img class="imagem" src="../../../assets/img/quest/Questions-pana.png" alt="Questions-pana.png" width="70%" height="70%"/>
+  </div>
+</ion-content>

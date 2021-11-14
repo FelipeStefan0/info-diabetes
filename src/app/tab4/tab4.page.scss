@@ -1,0 +1,35 @@
+div {
+  background-color: #02a0ba;
+}
+
+ion-searchbar {
+  --border-radius: 50px;
+}
+
+ion-content {
+  --background:#0092a8;
+}
+
+ion-grid {
+  --background: #02a0ba;
+
+  margin-bottom: 70px;
+  padding-top: 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+ion-row {
+  --background: #1bbdd7;
+
+  display: block;
+}
+
+ion-col {
+  text-align: center;
+}
+
+.listItens {
+  margin-right: 17px;
+}

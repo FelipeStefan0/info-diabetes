@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tabela de Alimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div>
+  <ion-searchbar placeholder="Pesquisar Alimentos" [(ngModel)]="queryText" (ionInput)="filterComidas($event)"
+    clearInput>
+  </ion-searchbar>
+</div>
+<ion-content>
+  <ion-grid style="position: fixed; z-index: 10; width: 100%;">
+    <ion-list>
+      <ion-row>
+        <ion-item lines="full">
+          <ion-col class="listTitle" size=3 style="font-size: 13.5px;">Baixo IG ≤ 55</ion-col>
+          <ion-col class="listTitle" size=6 style="font-size: 13.5px;">Médio IG 56 - 69</ion-col>
+          <ion-col class="listTitle" size=3 style="font-size: 13.5px;">Alto IG ≥ 70</ion-col>
+        </ion-item>
+      </ion-row>
+      <ion-row >
+        <ion-item lines="full">
+          <ion-col class="listTitle"><strong>Alimento</strong></ion-col>
+          <ion-col class="listTitle"><strong>IG</strong></ion-col>
+          <ion-col class="listTitle"><strong>Carboidratos<br>(Porção de 100g)</strong></ion-col>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
+
+  <ion-grid style="margin-top: 120px">
+    <ion-list line="full" style="border-radius: 10px;"> 
+      <ion-row class="listItens">
+        <ion-item lines="none" *ngFor="let comida of comidas">
+          <ion-col>
+            <h6>{{comida.nome}}</h6>
+          </ion-col>
+          <ion-col>
+            <h6>{{comida.IG}}</h6>
+          </ion-col>
+          <ion-col>
+            <h6>{{comida.carboidrato}}</h6>
+          </ion-col>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
+</ion-content>
