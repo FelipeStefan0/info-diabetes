@@ -201,7 +201,7 @@ export class Tab5Page implements OnInit {
 
     this.cintura = null;
     this.cinturaHomem = 0;
-    this.cinturaMulher = 0
+    this.cinturaMulher = 0;
 
     this.genero = 0;
 

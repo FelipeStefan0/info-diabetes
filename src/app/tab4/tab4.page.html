@@ -4,8 +4,10 @@
   </ion-toolbar>
 </ion-header>
 <div>
-  <ion-searchbar placeholder="Pesquisar Alimentos" [(ngModel)]="queryText" (ionInput)="filterComidas($event)"
-    clearInput>
+  <ion-searchbar placeholder="Pesquisar Alimentos"
+                [(ngModel)]="queryText" 
+                (ionInput)="filterComidas($event)"
+                clearInput>
   </ion-searchbar>
 </div>
 <ion-content>

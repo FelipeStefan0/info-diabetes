@@ -10,9 +10,11 @@
   </ion-card>
 
   <ion-card class="cardQuestions">
-    <img src="../../../../assets/img/abaEducativa/perguntas/PERGUNTAS.png" alt="NotFound.png">
+    <img src="../../../../assets/img/abaEducativa/perguntas/PERGUNTAS.png" 
+    alt="NotFound.png">
     <p id="contador" *ngIf="contador > 0 && contador <= 5">{{contador}}/5</p>
-    <h1 id="msgInicial" *ngIf="exec == 0">Agora vamos testar seus conhecimentos! Aperte o botão para começar.</h1>
+    <h1 id="msgInicial" *ngIf="exec == 0">Agora vamos testar seus conhecimentos! 
+      Aperte o botão para começar.</h1>
 
     <div class="enunciados" id="enunciados" style="display: none;" *ngIf="contador <= 5">
       <p id="enunciadoText"></p>

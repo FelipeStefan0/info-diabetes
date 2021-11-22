@@ -161,7 +161,7 @@ export class Quest2Page implements OnInit {
       document.getElementById("resultado").innerHTML = 'DIGITE UM VALOR VÁLIDO!';
     }
   }
-    //COMEÇO_CINTURA
+  //COMEÇO_CINTURA
   apertar1(){
     this.opcao = 1;
   }

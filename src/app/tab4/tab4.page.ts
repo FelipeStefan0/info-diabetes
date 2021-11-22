@@ -19,6 +19,7 @@ export class Tab4Page {
     this.comidas = alimentos;
     this.allComidas = this.comidas;
   }
+  
   filterComidas(com:any) {
 
     let val = com.target.value;

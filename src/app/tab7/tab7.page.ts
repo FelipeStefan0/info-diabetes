@@ -18,12 +18,12 @@ export class Tab7Page implements OnInit {
 
   exec = 0;
 
+  show = 0;
+
   varC = "";
   varE = "";
 
   repetida = [];
-
-  show = 0;
 
   constructor(private router: Router) {
   }
@@ -43,6 +43,9 @@ export class Tab7Page implements OnInit {
       }
     }
   }
+
+
+
 
   comecar() {
     this.getRandom(0, perguntas.length - 1)

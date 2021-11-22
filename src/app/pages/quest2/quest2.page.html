@@ -28,19 +28,18 @@
             <ion-radio class="db" (click)="rodar()" id="radioImc"></ion-radio>
           </ion-item>
         </ion-radio-group>
-        <ion-button class="button" *ngIf="aparecerImc>=1" (click)="rodar()">Quer descobrir seu IMC?</ion-button>
       </ion-card-content>
       <ion-card-header class="ionCardHeader">
-        <ion-card-title class="caixa1" *ngIf="aparecerImc>1">IMC:</ion-card-title>
+        <ion-card-title class="caixa1" *ngIf="aparecerImc>=1">IMC:</ion-card-title>
       </ion-card-header>
-      <div class="calculadora1" *ngIf="aparecerImc>1">
+      <div class="calculadora1" *ngIf="aparecerImc>=1">
         <div class="form">
           <ion-card-header>
             <ion-card-title class="caixa1">Qual sua altura?</ion-card-title>
           </ion-card-header>
           <ion-card-content class="caixa2">
             <ion-item>
-              <ion-input [(ngModel)]="altura" type="number" placeholder="digite aqui (em metros)"></ion-input>
+              <ion-input [(ngModel)]="altura" type="number" placeholder="exemplo: 1.78 metros"></ion-input>
             </ion-item>
           </ion-card-content>
           <ion-card-header>
@@ -48,7 +47,7 @@
           </ion-card-header>
           <ion-card-content class="caixa2">
             <ion-item>
-              <ion-input [(ngModel)]="peso" type="number" placeholder="digite aqui (em kg)"></ion-input>
+              <ion-input [(ngModel)]="peso" type="number" placeholder="exemplo: 65 kg"></ion-input>
             </ion-item>
           </ion-card-content>
           <ion-input id="calcular" type="submit" value="Calcular" (click)="calcular()"></ion-input>
@@ -102,10 +101,14 @@
         <ion-item *ngIf="aparecer==1">
           <ion-input [(ngModel)]="cintura" type="number" placeholder="digite aqui (em cm)"></ion-input>
         </ion-item>
-        <ion-button class="button" *ngIf="aparecer==1" (click)="execut()">Simule a circunferência</ion-button>
+        <ion-item class="db" *ngIf="aparecer==1">
+          <ion-label>Não sei</ion-label>
+          <ion-radio class="db" (click)="execut()"></ion-radio>
+        </ion-item>
       </ion-card-content>
       <ion-card-header class="ionCardHeader">
-        <ion-card-title class="caixa3" *ngIf="aparecer==2">Qual circunferência da cintura é compatível ou aproximada da sua?  (clique em uma opção para visualizar)</ion-card-title>
+        <ion-card-title class="caixa3" *ngIf="aparecer==2">Qual circunferência da cintura é compatível ou aproximada da
+          sua? (clique em uma opção para visualizar)</ion-card-title>
       </ion-card-header>
       <div class="calculadora" *ngIf="aparecer==2">
         <!--HOMEM-->
@@ -298,7 +301,8 @@
             </div>
             <p *ngIf="aparecerTopicoE==3">Procure construir o hábito de realizar atividades físicas, além de auxiliar na
               sua saúde física, auxilia também na sua saúde mental!</p>
-            <p *ngIf="aparecerTopicoE==4">Continue praticando atividades físicas! Além de melhorar sua saúde física, terá
+            <p *ngIf="aparecerTopicoE==4">Continue praticando atividades físicas! Além de melhorar sua saúde física,
+              terá
               uma melhora na sua saúde mental!</p>
           </div>
           <div>
