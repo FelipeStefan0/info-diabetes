@@ -24,7 +24,8 @@ export class Tab1Page {
   }
 
   backButtonEvent() {
-    this.platform.backButton.subscribeWithPriority(1, () => {
+    this.platform.backButton.subscribeWithPriority
+    (1, () => {
       this.backButtonAlert();
     });
   }

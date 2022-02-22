@@ -60,6 +60,11 @@ export class Tab7Page implements OnInit {
 
   }
 
+
+
+
+  
+
   proximo() {
     if (this.radioValue == "") {
       return null;
